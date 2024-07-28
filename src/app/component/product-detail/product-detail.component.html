@@ -1,0 +1,44 @@
+
+ <nav class="navbar bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color:whitesmoke">E commerce Wepsite</a>
+        <button  routerLink="/"  class="btn btn-warning text-light">Back</button>
+    </div>
+</nav> 
+
+<!-- single product display -->
+
+<div class="container">
+    <div class="row product-detail">
+        <div class="col-sm-3">
+             
+            <img class="product-img" [src]="productdata?.thumbnail">
+
+
+            <div>
+                <button class="btn btn-primary">Buy Now</button>  &nbsp;
+                 <button (click)="addtocart(productdata)" *ngIf="showadd"class="btn btn-success" >Add To Cart</button>
+                <button (click)="removeitem(productdata)"*ngIf="showremove" class="btn btn-info " >Remove Item</button>
+                
+            </div>
+        </div>
+    
+
+    <!-- this is right side -->
+    <div class="col-sm-8">
+        <div>
+            <h1>{{productdata?.brand}}</h1>
+            <p style="color: green;">special price</p>
+            <h3>{{productdata?.price}}</h3>
+            
+            <strong>{{productdata?.category}}&nbsp;</strong><br>
+            <strong>Description</strong><br>
+             <p>{{productdata?.description}}</p>
+        <p style="color: green;">DISCOUNT</p>
+        <p>{{productdata?.discountPercentage}}</p>
+        <h6>stock</h6>
+        <strong>{{productdata?.stock}}</strong>
+        </div>
+    </div>
+</div>
+</div>
